@@ -10,6 +10,7 @@ public class WelcomeBot {
         String firstName = sc.nextLine();
         System.out.print("May you please enter your last name: ");
         String lastName = sc.nextLine();
+        int studentNo = getValidStudentNumber(sc);
     }
     private static int getValidStudentNumber(Scanner sc){
         Pattern pattern = Pattern.compile("//d{9}");
