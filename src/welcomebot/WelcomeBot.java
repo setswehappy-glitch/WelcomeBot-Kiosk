@@ -11,5 +11,25 @@ public class WelcomeBot {
         System.out.print("May you please enter your last name: ");
         String lastName = sc.nextLine();
     }
-    
+    private static int getValidStudentNumber(Scanner sc){
+        Pattern pattern = Pattern.compile("//d{9}");
+        while(true){
+                System.out.print("May you please enter your student number:");
+                String input = sc.nextLine();
+                
+                try{
+                   int studentNumber = Integer.parseInt(input);
+                   Matcher matcher = pattern.matcher(input);
+                   if(matcher.matches()){
+                       return studentNumber;
+                   }
+                   else{
+                       System.out.println("Error! Please try again.");
+                   }
+                }
+                catch(NumberFormatException e){
+                    System.out.println("Please let you input be of number format only. Thank you!");
+                }
+        }
+    }
 }
