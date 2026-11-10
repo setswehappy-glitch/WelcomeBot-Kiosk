@@ -12,6 +12,9 @@ public class WelcomeBot {
         String lastName = sc.nextLine();
         int studentNo = getValidStudentNumber(sc);
         String initial = getInitials(firstName);
+        String email = studentNo + "@mycput.ac.za";
+        String nameBlock = initial + lastName;
+        printSummary(nameBlock, studentNo, email);
     }
     private static int getValidStudentNumber(Scanner sc){
         Pattern pattern = Pattern.compile("//d{9}");
@@ -49,5 +52,10 @@ public class WelcomeBot {
             }
             return initials.toString();
         }
+    }
+    public void printSummary(String nameBlock, int studentNo, String email){
+       System.out.printf("Initials and Surname: %s\n", nameBlock);
+       System.out.printf("Student number: %d\n", studentNo);
+       System.out.printf("Student email: %s\n", email);
     }
 }
