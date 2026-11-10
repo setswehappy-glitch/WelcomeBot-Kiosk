@@ -11,6 +11,7 @@ public class WelcomeBot {
         System.out.print("May you please enter your last name: ");
         String lastName = sc.nextLine();
         int studentNo = getValidStudentNumber(sc);
+        String initial = getInitials(firstName);
     }
     private static int getValidStudentNumber(Scanner sc){
         Pattern pattern = Pattern.compile("//d{9}");
@@ -31,6 +32,22 @@ public class WelcomeBot {
                 catch(NumberFormatException e){
                     System.out.println("Please let you input be of number format only. Thank you!");
                 }
+        }
+    }
+    public static String getInitials(String firstNames){
+        if (firstNames.equals("")){
+            return "";
+        }
+        else{
+            StringBuilder initials = new StringBuilder();
+            String [] parts = firstNames.split("\\s+");
+            for(String part : parts){
+                if(part.length() > 0){
+                    char firstCharacter = Character.toUpperCase(part.charAt(0));
+                    initials.append(firstCharacter);
+                }
+            }
+            return initials.toString();
         }
     }
 }
