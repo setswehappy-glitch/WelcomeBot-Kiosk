@@ -17,7 +17,7 @@ public class WelcomeBot {
         printSummary(nameBlock, studentNo, email);
     }
     private static int getValidStudentNumber(Scanner sc){
-        Pattern pattern = Pattern.compile("//d{9}");
+        Pattern pattern = Pattern.compile("\\d{9}");
         while(true){
                 System.out.print("May you please enter your student number:");
                 String input = sc.nextLine();
@@ -53,7 +53,7 @@ public class WelcomeBot {
             return initials.toString();
         }
     }
-    public void printSummary(String nameBlock, int studentNo, String email){
+    public static void printSummary(String nameBlock, int studentNo, String email){
        System.out.printf("Initials and Surname: %s\n", nameBlock);
        System.out.printf("Student number: %d\n", studentNo);
        System.out.printf("Student email: %s\n", email);
