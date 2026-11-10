@@ -13,13 +13,13 @@ public class WelcomeBot {
         int studentNo = getValidStudentNumber(sc);
         String initial = getInitials(firstName);
         String email = studentNo + "@mycput.ac.za";
-        String nameBlock = initial + lastName;
+        String nameBlock = initial + " " + lastName;
         printSummary(nameBlock, studentNo, email);
     }
     private static int getValidStudentNumber(Scanner sc){
         Pattern pattern = Pattern.compile("\\d{9}");
         while(true){
-                System.out.print("May you please enter your student number:");
+                System.out.print("May you please enter your student number: ");
                 String input = sc.nextLine();
                 
                 try{
